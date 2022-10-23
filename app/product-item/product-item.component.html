@@ -1,0 +1,21 @@
+<div class="product-container">
+  <a routerLink="/product-item-details" >
+    <img class="product-image" src="{{ product.url }}" alt="" (click)="previewproduct(product)">
+  </a>
+  <h3>{{product.name}}</h3>
+  <h3>${{product.price}}</h3>
+  <select class="select-input" name="Required_Quantity" aria-readonly="true" id="Quantity" aria-label="Quantity"
+  [(ngModel)]="product.Quantity">
+    <option class="Option" value="1" selected>1</option>
+    <option class="Option" value="2">2</option>
+    <option class="Option" value="3">3</option>
+    <option class="Option" value="4">4</option>
+    <option class="Option" value="5">5</option>
+    <option class="Option" value="6">6</option>
+    <option class="Option" value="7">7</option>
+    <option class="Option" value="8">8</option>
+    <option class="Option" value="9">9</option>
+    <option class="Option" value="10">10</option>
+  </select>
+  <button class="back-link" (click)="Add_To_Cart(product)">Add To Cart</button>
+</div>

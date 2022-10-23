@@ -1,0 +1,28 @@
+.navigation{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  padding: 20px 200px 20px 200px;
+  background: rgb(0, 123, 255);
+  }
+  a{
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 100%;
+  }
+  button:hover{
+    margin-top: 8px;
+    background-image: radial-gradient(red,black);
+    font-size: 25px;
+    color: white;
+  }
+  button{
+    margin-top: 15px;
+    font-size: 25px;
+    margin-right: 25px;
+  }
+  h1{
+    text-align: center;
+}
+

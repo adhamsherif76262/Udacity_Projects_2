@@ -1,0 +1,53 @@
+img {
+  border-radius: 10px;
+  width: 320px;
+}
+
+img:hover{
+  filter: grayscale(100%);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.select-input {
+  width: 108px;
+  margin-bottom: 8px;
+}
+
+.detail-container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.detail-item {
+  margin-left: 128px;
+  margin-right: 128px;
+  flex-direction: column;
+}
+
+label{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input{
+  font-size: 15px;
+  font-weight: bold;
+}
+select{
+  font-size: 15px;
+  font-weight: bold;
+}
+.back-link {
+  margin-top: 8px;
+  font-size: 25px;
+}
+
+.back-link:hover{
+  margin-top: 8px;
+  background-image: radial-gradient(red,black);
+  font-size: 25px;
+  color: white;
+}

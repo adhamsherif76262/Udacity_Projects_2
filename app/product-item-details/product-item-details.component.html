@@ -1,0 +1,30 @@
+<div *ngFor="let The_Product of Products" class="detail-container">
+      <div class="detail-item">
+          <img  src="{{ The_Product.url }}" alt="loading failed">
+          <h3>{{The_Product.name}}</h3>
+          <h3>${{The_Product.price}}</h3>
+          <h3>{{The_Product.description}}</h3>
+          <label for="Quantity">Amount:</label>
+          <!-- <input class="select-input" type="number"  min="0" max="10"  placeholder="Quantity"
+          value="{{ The_Product.Quantity }}" [(ngModel)]="The_Product.Quantity"> -->
+          <br>
+          <select class="select-input" name="Required_Quantity" id="Quantity" aria-label="Quantity"
+           [(ngModel)]="The_Product.Quantity">
+            <option class="Option" value="1" selected>1</option>
+            <option class="Option" value="2">2</option>
+            <option class="Option" value="3">3</option>
+            <option class="Option" value="4">4</option>
+            <option class="Option" value="5">5</option>
+            <option class="Option" value="6">6</option>
+            <option class="Option" value="7">7</option>
+            <option class="Option" value="8">8</option>
+            <option class="Option" value="9">9</option>
+            <option class="Option" value="10">10</option>
+          </select>
+          <br>
+          <button class="back-link" (click)="Push_To_Cart(The_Product)">Add To Cart</button>
+      </div>
+      <br><br><br>
+      <button class="back-link" routerLink="/">Back to Product List</button>
+</div>
+

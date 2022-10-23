@@ -1,0 +1,46 @@
+<div class="cart-container ">
+  <div *ngFor="let cartproduct of Cart_List" class="cart-item">
+     <div class="cart-item-details" *ngIf="cartproduct.Quantity">
+        <img  src="{{ cartproduct.url }}" alt="">
+        <h3>{{cartproduct.name}}</h3>
+        <h3>${{cartproduct.price}}</h3>
+        <pre for="Quantity">Amount:</pre>
+        <input class="number-input "  type="number" min="0" max="10"  placeholder="Quantity"
+        value="{{ cartproduct.Quantity }}"
+        [ngModel]="cartproduct.Quantity" oninput="this.value=this.value.replace(/[^0-9]*/g, '');"
+         (ngModelChange)="CartTotal(cartproduct,$event)">
+     </div>
+  </div>
+
+  <div class="cart-panel">
+    <pre for="Total">Total:</pre>
+    <h3 id="Total" >${{The_CartTotal()}}</h3>
+    <button class="back-link" (click)="clearcart()">Clear Cart</button>
+  </div>
+  <form #Form="ngForm" class="form-margin">
+    <br>
+    <br>
+    <pre for="Full_Name">Full name:</pre>
+    <input class="input" type="text" id="Full_Name" #Name="ngModel" name="FullName" required
+           minlength="3" maxlength="25" placeholder="(Minimum 3 Characters)" [(ngModel)]="Full_Name">
+    <br>
+    <br>
+    <pre for="Address">Address:</pre>
+    <input  class="input" type="text" name="UserAddress" id="Address" #U_Address="ngModel" required minlength="6"
+            maxlength="50" placeholder="(Minimum 6 Characters)" [(ngModel)]="Address">
+    <br>
+    <br>
+    <pre for="Credit_Card_Number">Credit Card Number:</pre>
+    <input class="input" name="CreditCardNumber" type="text"
+           id="Credit_Card_Number" #CCN="ngModel" required
+           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+           minlength="16" maxlength="16" placeholder="(16-digit Number)" [(ngModel)]="Credit_Card_Number">
+    <br>
+    <p>Rest Assured We Will Never Share Your Payment Details With Anyone Else</p>
+    <br><br>
+    <button class="back-link" (click)="Return_The_User_Name(Full_Name)" (click)="Return_The_User_Total(total)"
+            routerLink="/order-confirmation" [disabled]="Form.invalid" type="submit">Submit</button>
+  </form>
+</div>
+
+
